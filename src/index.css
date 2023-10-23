@@ -15,14 +15,7 @@ body,
 }
 
 .content {
-  transition: margin .3s;
-}
-
-.content-collapsed {
   margin-left: 80px;
-}
-.content-not-collapsed {
-  margin-left: 270px;
 }
 
 ::-webkit-scrollbar {
@@ -37,4 +30,10 @@ body,
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media only screen and (max-width: 1080px) {
+  .content-not-collapsed {
+    margin-left: 80px;
+  }
 }
