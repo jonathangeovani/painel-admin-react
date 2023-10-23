@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
@@ -17,14 +18,19 @@ import Geography from "./scenes/Geography";
 
 const App = () => {
   const [theme, colorMode] = useMode();
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <Sidebar />
-          <main className="content">
+          <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
+          <main
+            className={`content ${
+              isCollapsed ? "content-collapsed" : "content-not-collapsed"
+            }`}
+          >
             <Topbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
