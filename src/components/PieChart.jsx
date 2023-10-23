@@ -1,13 +1,14 @@
 import { ResponsivePie } from "@nivo/pie";
 import { mockPieData as data } from "../data/mockData";
-import { useTheme } from "@mui/material";
+import { Typography, useTheme, useMediaQuery } from "@mui/material";
 import { tokens } from "../theme";
 
 const PieChart = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const screenTooSmall = useMediaQuery("(max-width: 650px)");
 
-  return (
+  return !screenTooSmall ? (
     <ResponsivePie
       data={data}
       theme={{
@@ -88,6 +89,10 @@ const PieChart = () => {
         },
       ]}
     />
+  ) : (
+    <Typography variant="h5" textAlign="center" mt="70px">
+      This screen is too small to show this data
+    </Typography>
   );
 };
 

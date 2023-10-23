@@ -1,4 +1,4 @@
-import { Box, IconButton, useTheme } from "@mui/material";
+import { Box, IconButton, useTheme, useMediaQuery } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material/InputBase";
@@ -13,13 +13,21 @@ const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+  const isMobile = useMediaQuery("(max-width: 700px)");
 
   return (
-    <Box display="flex" justifyContent="space-between" p={2}>
+    <Box
+      display="flex"
+      flexDirection={!isMobile ? "row" : "column-reverse"}
+      justifyContent="space-between"
+      alignItems="center"
+      p={!isMobile ? 2 : "10px 0"}
+    >
       <Box
         display="flex"
         backgroundColor={colors.primary[400]}
         borderRadius="3px"
+        mt={isMobile && "10px"}
       >
         <InputBase sx={{ ml: 2, flex: 1 }} />
         <IconButton type="button" sx={{ p: 1 }}>

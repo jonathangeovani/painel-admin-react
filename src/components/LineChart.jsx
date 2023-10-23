@@ -1,13 +1,14 @@
 import { ResponsiveLine } from "@nivo/line";
 import { mockLineData as data } from "../data/mockData";
-import { useTheme } from "@mui/material";
+import { Typography, useTheme, useMediaQuery } from "@mui/material";
 import { tokens } from "../theme";
 
 const LineChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const screenTooSmall = useMediaQuery("(max-width: 700px)");
 
-  return (
+  return !screenTooSmall | isDashboard ? (
     <ResponsiveLine
       data={data}
       theme={{
@@ -28,6 +29,7 @@ const LineChart = ({ isDashboard = false }) => {
               strokeWidth: 1,
             },
             text: {
+              display: isDashboard ? "none" : "inline",
               fill: colors.grey[100],
             },
           },
@@ -111,6 +113,10 @@ const LineChart = ({ isDashboard = false }) => {
         },
       ]}
     />
+  ) : (
+    <Typography variant="h5" textAlign="center" mt="70px">
+      This screen is too small to show this data
+    </Typography>
   );
 };
 

@@ -1,4 +1,11 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
 import { mockTransactions } from "../../data/mockData";
@@ -16,10 +23,18 @@ import ProgressCircle from "../../components/ProgressCircle";
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const isNonMidScreen = useMediaQuery("(min-width: 900px)");
+  const isMobile = useMediaQuery("(max-width: 700px)");
 
   return (
     <Box m="20px">
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box
+        display="flex"
+        flexDirection={!isMobile ? "row" : "column"}
+        justifyContent="space-between"
+        alignItems="center"
+        mb={isMobile ? "20px" : undefined}
+      >
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
         <Box>
           <Button
@@ -41,12 +56,14 @@ const Dashboard = () => {
       <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
+        gridAutoRows={!isMobile ? "140px" : "125px"}
         gap="20px"
       >
         {/* ROW 1 */}
         <Box
-          gridColumn="span 3"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 3" : "span 6") : "span 12"
+          }
           backgroundColor={colors.primary[400]}
           display="flex"
           justifyContent="center"
@@ -65,7 +82,9 @@ const Dashboard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 3" : "span 6") : "span 12"
+          }
           backgroundColor={colors.primary[400]}
           display="flex"
           justifyContent="center"
@@ -84,7 +103,9 @@ const Dashboard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 3" : "span 6") : "span 12"
+          }
           backgroundColor={colors.primary[400]}
           display="flex"
           justifyContent="center"
@@ -103,7 +124,9 @@ const Dashboard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 3" : "span 6") : "span 12"
+          }
           backgroundColor={colors.primary[400]}
           display="flex"
           justifyContent="center"
@@ -124,7 +147,9 @@ const Dashboard = () => {
 
         {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 8" : "span 12") : "span 12"
+          }
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -167,7 +192,9 @@ const Dashboard = () => {
 
         {/* TRANSACTIONS */}
         <Box
-          gridColumn="span 4"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 4" : "span 6") : "span 12"
+          }
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           overflow="auto"
@@ -219,7 +246,9 @@ const Dashboard = () => {
 
         {/* ROW 3 */}
         <Box
-          gridColumn="span 4"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 4" : "span 6") : "span 12"
+          }
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
@@ -242,7 +271,9 @@ const Dashboard = () => {
         </Box>
 
         <Box
-          gridColumn="span 4"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 4" : "span 6") : "span 12"
+          }
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -255,7 +286,9 @@ const Dashboard = () => {
         </Box>
 
         <Box
-          gridColumn="span 4"
+          gridColumn={
+            !isMobile ? (isNonMidScreen ? "span 4" : "span 6") : "span 12"
+          }
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"

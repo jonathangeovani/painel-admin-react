@@ -1,14 +1,15 @@
 import { ResponsiveChoropleth } from "@nivo/geo";
 import { geoFeatures } from "../data/mockGeoFeatures";
 import { mockGeographyData as data } from "../data/mockData";
-import { useTheme } from "@mui/material";
+import { Typography, useTheme, useMediaQuery } from "@mui/material";
 import { tokens } from "../theme";
 
 const GeographyChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const screenTooSmall = useMediaQuery("(max-width: 700px)");
 
-  return (
+  return !screenTooSmall | isDashboard ? (
     <ResponsiveChoropleth
       data={data}
       theme={{
@@ -108,6 +109,10 @@ const GeographyChart = ({ isDashboard = false }) => {
           : undefined
       }
     />
+  ) : (
+    <Typography variant="h5" textAlign="center" mt="70px">
+      This screen is too small to show this data
+    </Typography>
   );
 };
 

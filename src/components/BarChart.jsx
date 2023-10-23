@@ -1,4 +1,4 @@
-import { useTheme } from "@mui/material";
+import { Typography, useTheme, useMediaQuery } from "@mui/material";
 import { tokens } from "../theme";
 import { ResponsiveBar } from "@nivo/bar";
 import { mockBarData as data } from "../data/mockData";
@@ -6,8 +6,9 @@ import { mockBarData as data } from "../data/mockData";
 const BarChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const screenTooSmall = useMediaQuery("(max-width: 700px)");
 
-  return (
+  return !screenTooSmall | isDashboard ? (
     <ResponsiveBar
       data={data}
       theme={{
@@ -28,6 +29,7 @@ const BarChart = ({ isDashboard = false }) => {
               strokeWidth: 1,
             },
             text: {
+              display: isDashboard ? "none" : "inline",
               fill: colors.grey[100],
             },
           },
@@ -138,6 +140,10 @@ const BarChart = ({ isDashboard = false }) => {
         e.id + ": " + e.formattedValue + " in country: " + e.indexValue
       }
     />
+  ) : (
+    <Typography variant="h5" textAlign="center" mt="70px">
+      This screen is too small to show this Element
+    </Typography>
   );
 };
 
