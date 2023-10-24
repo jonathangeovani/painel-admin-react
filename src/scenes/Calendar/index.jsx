@@ -46,7 +46,7 @@ const Calendar = () => {
 
   return (
     <Box m="20px">
-      <Header title="Calendário" subtitle="Calendário de eventos" />
+      <Header title="CALENDÁRIO" subtitle="Calendário de eventos" />
       {!screenTooSmall ? (
         <Box display="flex" justifyContent="space-between">
           {/* CALENDAR SIDEBAR */}
