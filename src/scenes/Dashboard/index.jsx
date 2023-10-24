@@ -34,6 +34,7 @@ const Dashboard = () => {
         justifyContent="space-between"
         alignItems="center"
         mb={isMobile ? "20px" : undefined}
+        textAlign={isMobile ? "center" : "left"}
       >
         <Header title="PAINEL" subtitle="Bem-vindo ao seu painel" />
         <Box>
