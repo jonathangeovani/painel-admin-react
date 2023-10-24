@@ -204,7 +204,7 @@ const Dashboard = () => {
             display="flex"
             justifyContent="space-between"
             alignItems="center"
-            borderBottom={`4px solid ${colors.primary[500]}`}
+            borderBottom={`4px solid ${colors.blueAccent[800]}`}
             color={colors.grey[100]}
             p="15px"
           >
@@ -218,7 +218,7 @@ const Dashboard = () => {
               display="flex"
               justifyContent="space-between"
               alignItems="center"
-              borderBottom={`4px solid ${colors.primary[500]}`}
+              borderBottom={`4px solid ${colors.blueAccent[800]}`}
               p="15px"
             >
               <Box>
