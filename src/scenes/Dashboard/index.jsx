@@ -35,7 +35,7 @@ const Dashboard = () => {
         alignItems="center"
         mb={isMobile ? "20px" : undefined}
       >
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="PAINEL" subtitle="Bem-vindo ao seu painel" />
         <Box>
           <Button
             sx={{
@@ -47,7 +47,7 @@ const Dashboard = () => {
             }}
           >
             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Download Reports
+            Baixar Relatórios
           </Button>
         </Box>
       </Box>
@@ -70,8 +70,8 @@ const Dashboard = () => {
           alignItems="center"
         >
           <StatBox
-            title="12,361"
-            subtitle="Emails Sent"
+            title="12.361"
+            subtitle="E-mails enviados"
             progress="0.75"
             increase="+14%"
             icon={
@@ -91,8 +91,8 @@ const Dashboard = () => {
           alignItems="center"
         >
           <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
+            title="431.225"
+            subtitle="Vendas obtidas"
             progress="0.5"
             increase="+21%"
             icon={
@@ -112,8 +112,8 @@ const Dashboard = () => {
           alignItems="center"
         >
           <StatBox
-            title="32,441"
-            subtitle="New Clients"
+            title="32.441"
+            subtitle="Novos clientes"
             progress="0.25"
             increase="+5%"
             icon={
@@ -133,8 +133,8 @@ const Dashboard = () => {
           alignItems="center"
         >
           <StatBox
-            title="1,325,134"
-            subtitle="Traffic Inbound"
+            title="1.325.134"
+            subtitle="Tráfego de entrada"
             progress="0.75"
             increase="+43%"
             icon={
@@ -166,14 +166,14 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Generated
+                Receita gerada
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                $59,342,32
+                R$ 59.342.32
               </Typography>
             </Box>
             <Box>
@@ -208,7 +208,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Transações recentes
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -232,13 +232,15 @@ const Dashboard = () => {
                   {transaction.user}
                 </Typography>
               </Box>
-              <Box color={colors.grey[100]}>{transaction.date}</Box>
+              <Box color={colors.grey[100]}>
+                {transaction.date.split("-").reverse().join("/")}
+              </Box>
               <Box
                 backgroundColor={colors.greenAccent[500]}
                 p="5px 10px"
                 borderRadius="4px"
               >
-                {transaction.cost}
+                R$ {transaction.cost.replace(".", ",")}
               </Box>
             </Box>
           ))}
@@ -254,7 +256,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Campanha
           </Typography>
           <Box
             display="flex"
@@ -264,9 +266,9 @@ const Dashboard = () => {
           >
             <ProgressCircle size="125" />
             <Typography variant="h5" color={colors.greenAccent[500]} mt="15px">
-              $48,352 revenue generated
+              Receita de R$ 48.352 gerada
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography>Inclui despesas e custos extras diversos</Typography>
           </Box>
         </Box>
 
@@ -278,7 +280,7 @@ const Dashboard = () => {
           backgroundColor={colors.primary[400]}
         >
           <Typography variant="h5" fontWeight="600" m="30px 30px 0">
-            Sales Quantity
+            Quantidade de vendas
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
@@ -294,7 +296,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600" mb="15px">
-            Geography Based Traffic
+            Tráfego baseado em geografia
           </Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true} />

@@ -11,43 +11,43 @@ const Contacts = () => {
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registrar ID" },
+    { field: "registrarId", headerName: "ID do Registro" },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Nome",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
-      headerName: "Age",
+      headerName: "Idade",
       type: "number",
       headerAlign: "left",
       align: "left",
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: "Telefone",
       flex: 1,
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: "E-mail",
       flex: 1,
     },
     {
       field: "address",
-      headerName: "Address",
+      headerName: "Endereço",
       flex: 1,
     },
     {
       field: "city",
-      headerName: "City",
+      headerName: "Cidade",
       flex: 1,
     },
     {
       field: "zipCode",
-      headerName: "Zip Code",
+      headerName: "CEP",
       flex: 1,
     },
   ];
@@ -55,8 +55,8 @@ const Contacts = () => {
   return (
     <Box m="20px">
       <Header
-        title="CONTACTS"
-        subtitle="List of Contacts for future reference"
+        title="CONTATOS"
+        subtitle="Lista de contatos para referência futura"
       />
       {!isMobile ? (
         <Box
@@ -96,7 +96,7 @@ const Contacts = () => {
         </Box>
       ) : (
         <Typography variant="h5" textAlign="center" mt="70px">
-          This screen is too small to show this Element
+          Esta tela é muito pequena para exibir esse elemento.
         </Typography>
       )}
     </Box>

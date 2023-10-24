@@ -17,15 +17,18 @@ const phoneRegExp =
   /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
 const userSchema = yup.object().shape({
-  firstName: yup.string().required("First Name is required!"),
-  lastName: yup.string().required("Last Name is required!"),
-  email: yup.string().email("Invalid email!").required("Email is required!"),
+  firstName: yup.string().required("Preencha o campo!"),
+  lastName: yup.string().required("Preencha o campo!"),
+  email: yup
+    .string()
+    .email("Formato de e-mail inválido!")
+    .required("Preencha o campo!"),
   contact: yup
     .string()
-    .matches(phoneRegExp, "Phone Number is not valid!")
-    .required("Contact is required!"),
-  address1: yup.string().required("Address 1 is required!"),
-  address2: yup.string().required("Address 2 is required!"),
+    .matches(phoneRegExp, "Formato de telefone inválido!")
+    .required("Preencha o campo!"),
+  address1: yup.string().required("Preencha o campo!"),
+  address2: yup.string(),
 });
 
 const Form = () => {
@@ -38,7 +41,10 @@ const Form = () => {
 
   return (
     <Box m="20px">
-      <Header title="CREATE USER" subtitle="Create a new User Profile" />
+      <Header
+        title="CADASTRAR USUÁRIO"
+        subtitle="Cria um novo perfil de usuário"
+      />
 
       <Formik
         onSubmit={handleFormSubmit}
@@ -66,7 +72,7 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="First Name"
+                label="Primeiro nome"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.firstName}
@@ -79,7 +85,7 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Last Name"
+                label="Sobrenome"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.lastName}
@@ -92,7 +98,7 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Email"
+                label="E-mail"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.email}
@@ -105,7 +111,7 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Contact Number"
+                label="Telefone de contato"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.contact}
@@ -118,7 +124,7 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="Endereço 1"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -131,7 +137,7 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label="Endereço 2 (opcional)"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -143,7 +149,7 @@ const Form = () => {
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="secondary" variant="contained">
-                Create New User
+                Criar novo usuário
               </Button>
             </Box>
           </form>

@@ -5,7 +5,10 @@ import LineChart from "../../components/LineChart";
 const Line = () => {
   return (
     <Box m="20px">
-      <Header title="LINE CHART" subtitle="Simple Line Chart with Nivo Chart" />
+      <Header
+        title="GRÁFICO DE LINHA"
+        subtitle="Visualização dos dados em linha com Nivo Chart"
+      />
 
       <Box height="75vh">
         <LineChart />

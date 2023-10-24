@@ -121,7 +121,7 @@ const Sidebar = () => {
                   Elon Musk
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  Dashboard Admin
+                  Administrador do painel
                 </Typography>
               </Box>
             </Box>
@@ -130,7 +130,7 @@ const Sidebar = () => {
           {/* MENU ITEMS */}
           <Box paddingLeft={!isCollapsed ? "10%" : undefined}>
             <Item
-              title="Dashboard"
+              title="Painel"
               to="/"
               icon={<HomeOutlinedIcon />}
               selected={selected}
@@ -143,11 +143,11 @@ const Sidebar = () => {
               color={colors.grey[300]}
               m="15px 0px 5px 20px"
             >
-              Data
+              Dados
             </Typography>
 
             <Item
-              title="Manage Team"
+              title="Gerenciar equipe"
               to="/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
@@ -155,7 +155,7 @@ const Sidebar = () => {
               setIsCollapsed={setIsCollapsed}
             />
             <Item
-              title="Contacts Information"
+              title="Informações de Contato"
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
@@ -163,7 +163,7 @@ const Sidebar = () => {
               setIsCollapsed={setIsCollapsed}
             />
             <Item
-              title="Invoices Balances"
+              title="Saldos de faturas"
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
@@ -174,13 +174,13 @@ const Sidebar = () => {
             <Typography
               variant="h6"
               color={colors.grey[300]}
-              m="15px 0px 5px 20px"
+              m="15px 0px 5px 15px"
             >
-              Pages
+              Páginas
             </Typography>
 
             <Item
-              title="Profile Form"
+              title="Formulário de perfil"
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
@@ -188,7 +188,7 @@ const Sidebar = () => {
               setIsCollapsed={setIsCollapsed}
             />
             <Item
-              title="Calendar"
+              title="Calendário"
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
@@ -196,7 +196,7 @@ const Sidebar = () => {
               setIsCollapsed={setIsCollapsed}
             />
             <Item
-              title="FAQ Page"
+              title="Perguntas Frequentes"
               to="/faq"
               icon={<HelpOutlinedIcon />}
               selected={selected}
@@ -207,13 +207,13 @@ const Sidebar = () => {
             <Typography
               variant="h6"
               color={colors.grey[300]}
-              m="15px 0px 5px 20px"
+              m="15px 0px 5px 15px"
             >
-              Charts
+              Gráficos
             </Typography>
 
             <Item
-              title="Bar Chart"
+              title="Gráfico de barras"
               to="/bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
@@ -221,7 +221,7 @@ const Sidebar = () => {
               setIsCollapsed={setIsCollapsed}
             />
             <Item
-              title="Pie Chart"
+              title="Gráfico de pizza"
               to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
@@ -229,7 +229,7 @@ const Sidebar = () => {
               setIsCollapsed={setIsCollapsed}
             />
             <Item
-              title="Line Chart"
+              title="Gráfico de linha"
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
@@ -237,7 +237,7 @@ const Sidebar = () => {
               setIsCollapsed={setIsCollapsed}
             />
             <Item
-              title="Geography Chart"
+              title="Mapa do tráfego"
               to="/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}

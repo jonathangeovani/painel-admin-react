@@ -5,7 +5,10 @@ import PieChart from "../../components/PieChart";
 const Pie = () => {
   return (
     <Box m="20px">
-      <Header title="PIE CHART" subtitle="Simple Pie Chart with Nivo Chart" />
+      <Header
+        title="GRÁFICO DE PIZZA"
+        subtitle="Visualização dos dados em pizza com Nivo Chart"
+      />
 
       <Box height="75vh">
         <PieChart />

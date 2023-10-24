@@ -5,7 +5,10 @@ import BarChart from "../../components/BarChart";
 const Bar = () => {
   return (
     <Box m="20px">
-      <Header title="BAR CHART" subtitle="Simple Bar Chart with Nivo Chart" />
+      <Header
+        title="GRÁFICO DE BARRAS"
+        subtitle="Visualização dos dados em barras com Nivo Chart"
+      />
       <Box height="75vh">
         <BarChart />
       </Box>

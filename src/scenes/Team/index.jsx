@@ -16,30 +16,30 @@ const Team = () => {
     { field: "id", headerName: "ID" },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Nome",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
-      headerName: "Age",
+      headerName: "Idade",
       type: "number",
       headerAlign: "left",
       align: "left",
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: "Telefone",
       flex: 1,
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: "E-mail",
       flex: 1,
     },
     {
       field: "access",
-      headerName: "Access Level",
+      headerName: "Nível de acesso",
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
@@ -50,6 +50,7 @@ const Team = () => {
             p="5px"
             display="flex"
             justifyContent="center"
+            alignItems="center"
             backgroundColor={
               access === "admin"
                 ? colors.greenAccent[600]
@@ -61,7 +62,7 @@ const Team = () => {
             {access === "manager" && <SecurityOutlinedIcon />}
             {access === "user" && <LockOpenOutlinedIcon />}
             <Typography color={colors.grey[100]} ml="5px">
-              {access}
+              {access.toUpperCase()}
             </Typography>
           </Box>
         );
@@ -71,7 +72,7 @@ const Team = () => {
 
   return (
     <Box m="20px">
-      <Header title="TEAM" subtitle="Managing the Team Members" />
+      <Header title="EQUIPE" subtitle="Gerenciando os membros da equipe" />
       {!isMobile ? (
         <Box
           m="40px 0 0"
@@ -103,7 +104,7 @@ const Team = () => {
         </Box>
       ) : (
         <Typography variant="h5" textAlign="center" mt="70px">
-          This screen is too small to show this Element
+          Esta tela é muito pequena para exibir esse elemento.
         </Typography>
       )}
     </Box>

@@ -12,12 +12,12 @@ const FAQ = () => {
 
   return (
     <Box m="20px">
-      <Header title="FAQ" subtitle="Frequently Asked Questions Page" />
+      <Header title="FAQ" subtitle="Página de perguntas frequentes" />
 
-      <Accordion defaultExpanded>
+      <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="h5" color={colors.greenAccent[500]}>
-            Why use the Elon Musk picture?
+            Por que o administrador é o Elon Musk?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -30,52 +30,52 @@ const FAQ = () => {
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="h5" color={colors.greenAccent[500]}>
-            Why use Material UI?
+            Por que utilizar Material UI?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            voluptates maiores perferendis, cupiditate corporis ullam?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti
+            modi ratione nam atque sint dolores.
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="h5" color={colors.greenAccent[500]}>
-            Why use FullCalendar?
+            Por que utilizar FullCalendar?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            voluptates maiores perferendis, cupiditate corporis ullam?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam,
+            est nulla dicta dolorem molestias sunt laudantium aspernatur!
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="h5" color={colors.greenAccent[500]}>
-            What we learned?
+            O que desenvolvemos até aqui?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            voluptates maiores perferendis, cupiditate corporis ullam?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
+            veniam porro beatae nostrum doloribus vero quae culpa nobis?
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="h5" color={colors.greenAccent[500]}>
-            Is there some others libs to use?
+            Qual o próximo passo?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            voluptates maiores perferendis, cupiditate corporis ullam?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            accusantium odit maxime sit molestiae necessitatibus earum!
           </Typography>
         </AccordionDetails>
       </Accordion>

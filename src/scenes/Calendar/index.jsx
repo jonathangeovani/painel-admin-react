@@ -14,9 +14,12 @@ const Calendar = () => {
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
   const screenTooSmall = useMediaQuery("(max-width: 700px)");
+  const todayStr = new Date().toISOString().replace(/T.*$/, "");
+  const tomorrow =
+    todayStr.slice(0, -2) + (parseInt(todayStr.split("-")[2]) + 1);
 
   const handleDateClick = (selected) => {
-    const title = prompt("Please enter a new title for your event");
+    const title = prompt("Por favor, adicione um título ao evento:");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
 
@@ -34,7 +37,7 @@ const Calendar = () => {
   const handleEventClick = (selected) => {
     if (
       window.confirm(
-        `Are you sure you want to delete the event '${selected.event.title}'?`
+        `Tem certeza de quer deletar o evento "${selected.event.title}"?`
       )
     ) {
       selected.event.remove();
@@ -43,7 +46,7 @@ const Calendar = () => {
 
   return (
     <Box m="20px">
-      <Header title="Calendar" subtitle="This is the calendar view" />
+      <Header title="Calendário" subtitle="Calendário de eventos" />
       {!screenTooSmall ? (
         <Box display="flex" justifyContent="space-between">
           {/* CALENDAR SIDEBAR */}
@@ -53,7 +56,7 @@ const Calendar = () => {
             p="15px"
             borderRadius="4px"
           >
-            <Typography variant="h5">Events</Typography>
+            <Typography variant="h5">Eventos</Typography>
             <List>
               {currentEvents.map((event) => (
                 <ListItem
@@ -105,11 +108,11 @@ const Calendar = () => {
               eventClick={handleEventClick}
               eventsSet={(events) => setCurrentEvents(events)}
               initialEvents={[
-                { id: "1234", title: "All-day event", date: "2023-10-10" },
+                { id: "1234", title: "Ligar para Jonathan", date: todayStr },
                 {
                   id: "4321",
-                  title: "Prova Gestão de TI - Estácio",
-                  date: "2023-11-08",
+                  title: "Entrevista agendada",
+                  date: tomorrow + "T15:00:00",
                 },
               ]}
             />
@@ -117,7 +120,7 @@ const Calendar = () => {
         </Box>
       ) : (
         <Typography variant="h5" textAlign="center" mt="70px">
-          This screen is too small to show this Element.
+          Esta tela é muito pequena para exibir esse elemento.
         </Typography>
       )}
     </Box>

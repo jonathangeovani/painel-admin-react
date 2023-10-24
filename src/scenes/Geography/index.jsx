@@ -10,8 +10,8 @@ const Geography = () => {
   return (
     <Box m="20px">
       <Header
-        title="GEOGRAPHY CHART"
-        subtitle="Not Simple Geography Chart with Nivo Chart"
+        title="MAPA DO TRÁFEGO"
+        subtitle="Visualização dos dados pelo mapa com Nivo Chart"
       />
       <Box
         height="75vh"

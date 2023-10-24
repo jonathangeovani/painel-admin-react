@@ -13,40 +13,40 @@ const Invoices = () => {
     { field: "id", headerName: "ID" },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Nome",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: "E-mail",
       flex: 1,
     },
     {
       field: "cost",
-      headerName: "Cost",
+      headerName: "Valor",
       flex: 1,
       renderCell: (params) => (
         <Typography color={colors.greenAccent[500]}>
-          R$ {params.row.cost}
+          R$ {params.row.cost.replace(".", ",")}
         </Typography>
       ),
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: "Telefone",
       flex: 1,
     },
     {
       field: "date",
-      headerName: "Date",
+      headerName: "Data",
       flex: 1,
     },
   ];
 
   return (
     <Box m="20px">
-      <Header title="INVOICES" subtitle="List of Invoice Balances" />
+      <Header title="FATURAS" subtitle="Lista de saldos de faturas" />
       {!isMobile ? (
         <Box
           m="40px 0 0"
@@ -85,7 +85,7 @@ const Invoices = () => {
         </Box>
       ) : (
         <Typography variant="h5" textAlign="center" mt="70px">
-          This screen is too small to show this Element
+          Esta tela é muito pequena para exibir esse elemento.
         </Typography>
       )}
     </Box>
