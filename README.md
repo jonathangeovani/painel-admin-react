@@ -10,7 +10,7 @@ Este projeto foi criado com [Create React App](https://github.com/facebook/creat
 
 Instale as dependências com o comando:
 
-```console
+```bash
 npm install
 ```
 
@@ -18,7 +18,7 @@ npm install
 
 Para servir a aplicação execute o comando:
 
-```console
+```bash
 npm start
 ```
 
