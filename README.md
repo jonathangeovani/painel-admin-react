@@ -18,7 +18,7 @@ Check the app running: [Painel Admin React](https://paineladmin-react.vercel.app
 
 Install the dependencies with the command:
 
-```console
+```bash
 npm install
 ```
 
@@ -26,7 +26,7 @@ npm install
 
 This project was created with [Create React App](https://github.com/facebook/create-react-app). To run the app, execute the command:
 
-```console
+```bash
 npm start
 ```
 
