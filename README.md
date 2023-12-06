@@ -1,25 +1,47 @@
-<p align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" width="150"/></p>
+# Painel Admin React
 
-<h1 align="center">Painel de Administrador</h1>
+<p align="center">
+    <img src="./public/images/homepage_screenshot.png" width="350"/>
+    <br />
+    Home Page Screenshot
+</p>
 
-Visite a [página com o projeto rodando](https://paineladmin-react.vercel.app) para ver o resultado final.
+Check the app running: [Painel Admin React](https://paineladmin-react.vercel.app).
 
-Este projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Instalando as dependências
+- [Installation](#installation)
+- [Running the app](#running-the-app)
+- [App Screenshots](#app-screenshots)
 
-Instale as dependências com o comando:
+## Installation
+
+Install the dependencies with the command:
 
 ```console
 npm install
 ```
 
-## Rodando o app em modo de desenvolvimento
+## Running the App
 
-Para servir a aplicação execute o comando:
+This project was created with [Create React App](https://github.com/facebook/create-react-app). To run the app, execute the command:
 
 ```console
 npm start
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000) em seu navegador para ver a aplicação rodando.
+The app will start running at [localhost:3000](http://localhost:3000) on your browser.
+
+## App Screenshots
+
+<p align="center">
+    <img src="./public/images/views_screenshot.png" width="300"/>
+    <br />
+    Examples of tables and graphs
+</p>
+<br />
+<p align="center">
+    <img src="./public/images/dark_light_mode.png" width="300"/>
+    <br />
+    Dark and Light mode
+</p>
