@@ -35,7 +35,7 @@ The app will start running at [localhost:3000](http://localhost:3000) on your br
 ## App Screenshots
 
 <p align="center">
-    <img src="./public/images/views_screenshot.png" width="300"/>
+    <img src="./public/images/views_screenshot.png" width="450"/>
     <br />
     Examples of tables and graphs
 </p>
